@@ -10,7 +10,16 @@
 </template>
 <script>
 export default {
-    props: ['icon-name', 'icon-position']
+    props: {
+        iconName: {},
+        iconPosition: {
+            type: String,
+            default: 'left',
+            validator(value) {
+                return value === 'left' || value === 'right'
+            }
+        }
+    }
 }
 </script>
 <style lang="scss">
