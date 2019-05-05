@@ -18,30 +18,8 @@
             --border-color: #999;
             --border-color-hover: #666;
         }
-    </style>
-    <style>
-        .nt-button {
-            height: var(--button-height);
-            padding: 0 1em;
-            font: inherit;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--border-color);
-            background: var(--button-bg);
-        }
-        #app{
+        body {
             margin: 50px;
-        }
-        body{
-            font-size: var(--font-size);
-        }
-        .nt-button:hover {
-            border-color:var(--border-color-hover)
-        }
-        .nt-button:active {
-            background-color: var(--button-active-bg);
-        }
-        .nt-button:focus{
-            outline: none;
         }
     </style>
 </head>
@@ -49,12 +27,6 @@
 <div id="app">
     <nt-button></nt-button>
 </div>
-<script src="../node_modules/vue/dist/vue.min.js"></script>
-<script src="./button.js"></script>
-<script>
-  new Vue({
-      el: '#app'
-  })
-</script>
+<script src="./src/app.js"></script>
 </body>
 </html>
