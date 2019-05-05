@@ -1,8 +1,7 @@
 <template>
     <button class="nt-button" :class=`icon-${iconPosition}`>
-        <svg v-if="iconName" class="icon">
-            <use :xlink:href=`#i-${iconName}`></use>
-        </svg>
+        <g-icon v-if="iconName" :name="iconName"></g-icon>
+        <g-icon class="loading" name="loading"></g-icon>
         <div class="content">
             <slot></slot>
         </div>
@@ -23,6 +22,14 @@ export default {
 }
 </script>
 <style lang="scss">
+    @keyframes spin {
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
     .nt-button {
         height: var(--button-height);
         padding: 0 1em;
@@ -42,6 +49,9 @@ export default {
         &.icon-right {
             > .icon { order: 2; margin-right: 0; margin-left: .3em }
             > .content { order: 1; }
+        }
+        .loading{
+            animation: spin 1s infinite linear;
         }
     }
 </style>
