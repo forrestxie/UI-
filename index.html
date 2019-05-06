@@ -31,15 +31,20 @@
 </head>
 <body>
 <div id="app">
-    <nt-button>
+    <nt-button icon-name="settings" :loading="loading1" @click="loading1 = !loading1">
+        按钮js11
+    </nt-button>
+    <nt-button icon-name="settings" :loading="true" icon-position="left">
         按钮js
     </nt-button>
-    <nt-button icon-name="settings" icon-position="left">
+    <nt-button icon-name="loading" :loading="true" icon-position="right">
         按钮js
     </nt-button>
-    <nt-button icon-name="loading" icon-position="right">
-        按钮js
-    </nt-button>
+    <g-button-group>
+        <nt-button icon-name="left">上一页</nt-button>
+        <nt-button>更多</nt-button>
+        <nt-button icon-name="right" icon-position="right">下一页</nt-button>
+    </g-button-group>
 </div>
 <script src="./src/app.js"></script>
 <script src="//at.alicdn.com/t/font_1174351_kbpv35znw9j.js"></script>
