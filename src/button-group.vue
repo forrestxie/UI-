@@ -4,15 +4,27 @@
     </div>
 </template>
 <script>
-
+export default {
+    mounted() {
+        console.log(this.$el.children.nodeName)
+        for(let node in this.$el.children) {
+            console.log(node.nodeName)
+            if(node.nodeName !== 'button') {
+                console.warn('g-button-group的子元素应该全为 button')
+            }
+        }
+    }
+}
 </script>
 <style lang="scss">
 .buttonGroup {
     display: inline-flex;
+    vertical-align: top;
     > .nt-button {
         border-radius: 0;
-        vertical-align: top;
-        margin-left: -1px;
+        &:not(:first-child) {
+            margin-left: -1px;
+        }
         &:first-child{
             border-top-left-radius: var(--border-radius);
             border-bottom-left-radius: var(--border-radius);
