@@ -8,6 +8,9 @@
     </button>
 </template>
 <script>
+import Vue from 'vue'
+import Icon from './g-icon'
+
 export default {
     props: {
         iconName: {},
@@ -22,6 +25,9 @@ export default {
                 return value === 'left' || value === 'right'
             }
         }
+    },
+    components: {
+        'g-icon': Icon
     }
 }
 </script>
@@ -37,7 +43,7 @@ export default {
     .nt-button {
         height: var(--button-height);
         padding: 0 1em;
-        font: inherit;
+        font-size: var(--font-size);
         border-radius: var(--border-radius);
         border: 1px solid var(--border-color);
         background: var(--button-bg);
@@ -45,6 +51,7 @@ export default {
         justify-content: center;
         align-items: center;
         vertical-align: top;
+
         &:hover { border-color: var(--border-color-hover) }
         &:active { background-color: var(--button-active-bg); }
         &:focus { outline: none; }
