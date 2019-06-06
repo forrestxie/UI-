@@ -10,8 +10,12 @@ new Vue({
     el: '#app',
     data: {
         loading1: true
+    },
+    methods: {
+        emitEvent() {
+            this.loading1 = !this.loading1
+        }
     }
-
 })
 // 单元测试
 import chai from 'chai'

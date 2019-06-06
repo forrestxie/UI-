@@ -6,10 +6,10 @@
 <script>
 export default {
     mounted() {
-        console.log(this.$el.children.nodeName)
-        for(let node in this.$el.children) {
-            console.log(node.nodeName)
-            if(node.nodeName !== 'button') {
+        console.log(this.$el.children,11188)
+        for(let node of this.$el.children) {
+            console.log(node,2525)
+            if(node.nodeName.toLowerCase() !== 'button') {
                 console.warn('g-button-group的子元素应该全为 button')
             }
         }

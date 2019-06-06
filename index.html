@@ -31,10 +31,10 @@
 </head>
 <body>
 <div id="app">
-    <nt-button icon-name="settings" :loading="loading1" @click="loading1 = !loading1">
+    <nt-button icon-name="settings" :loading="loading1" @click="emitEvent">
         按钮js11
     </nt-button>
-    <nt-button icon-name="settings" :loading="true" icon-position="left">
+    <nt-button icon-name="settings" :loading="false" icon-position="left">
         按钮js
     </nt-button>
     <nt-button icon-name="loading" :loading="true" icon-position="right">
