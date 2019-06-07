@@ -1,6 +1,6 @@
 <template>
     <button class="nt-button" :class=`icon-${iconPosition}` @click="$emit('click')">
-        <g-icon class="icon" v-if="iconName && !loading" :name="iconName"></g-icon>
+        <g-icon class="icon xie" v-if="iconName && !loading" :name="iconName"></g-icon>
         <g-icon class="loading icon" v-if="loading" name="loading"></g-icon>
         <div class="content">
             <slot></slot>
