@@ -12,6 +12,7 @@ import Vue from 'vue'
 import Icon from './g-icon'
 
 export default {
+    name: 'GuluButton',
     props: {
         iconName: {},
         loading: {

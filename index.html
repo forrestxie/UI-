@@ -27,10 +27,22 @@
         body {
             margin: 50px;
         }
+        .box {
+            margin: 20px 0;
+        }
     </style>
 </head>
 <body>
 <div id="app">
+    <div class="box">
+    <g-input value="张三"></g-input>
+    <g-input value="李四" disabled></g-input>
+    <g-input value="王五" readonly></g-input>
+    </div>
+    <div class="box">
+    <g-input value="王五" error="姓名不能少于两个字"></g-input>
+    </div>
+    <div style="margin: 20px">
     <nt-button icon-name="settings" :loading="loading1" @click="emitEvent">
         按钮js11
     </nt-button>
@@ -45,10 +57,11 @@
         <nt-button>更多</nt-button>
         <nt-button icon-name="right" icon-position="right">下一页</nt-button>
     </g-button-group>
+    </div>
 </div>
 <div id="test">
 </div>
 <script src="./src/app.js"></script>
-<script src="//at.alicdn.com/t/font_1174351_kbpv35znw9j.js"></script>
+<script src="//at.alicdn.com/t/font_1174351_mq90hagcdvi.js"></script>
 </body>
 </html>
