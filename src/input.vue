@@ -1,12 +1,13 @@
 <template>
     <div class="wrapper" :class="{ 'error': error }">
         <!--如果存在error，则class等于error类，如果不存在，则class不存在-->
-        <input type="text" :value="value"
-               :readonly="readonly" :disabled="disabled"/>
+        <input type="text" :value="value" @change="changeValue" @input="$emit('input',$event.target.value)"
+               @focus="$emit('focus',$event.target.value)"
+               @blur="$emit('blur', $event.target.value)" :readonly="readonly" :disabled="disabled"/>
         <!--一起判断v-if，但不想加div,就用template-->
         <template v-if="error">
             <icon name="error" class="iconError"></icon>
-            <span class="errorMessage"> {{error}} </span>
+            <span class="errorMessage">{{ error }}</span>
         </template>
     </div>
 </template>
@@ -32,7 +33,12 @@ export default {
 
         }
     },
-    components: {icon}
+    components: {icon},
+    methods: {
+        changeValue(e) {
+            this.$emit('change', e.target.value)
+        }
+    }
 }
 </script>
 <style lang="scss" scoped>

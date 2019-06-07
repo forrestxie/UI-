@@ -11,11 +11,15 @@ Vue.component('g-input', Input)
 new Vue({
     el: '#app',
     data: {
-        loading1: true
+        loading1: true,
+        message: 'hi'
     },
     methods: {
         emitEvent() {
             this.loading1 = !this.loading1
+        },
+        emitChange(val) {
+            console.log(val)
         }
     }
 })
