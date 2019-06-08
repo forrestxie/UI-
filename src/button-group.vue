@@ -6,9 +6,7 @@
 <script>
 export default {
     mounted() {
-        console.log(this.$el.children,11188)
         for(let node of this.$el.children) {
-            console.log(node,2525)
             if(node.nodeName.toLowerCase() !== 'button') {
                 console.warn('g-button-group的子元素应该全为 button')
             }

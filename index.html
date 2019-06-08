@@ -27,6 +27,7 @@
         body {
             margin: 50px;
         }
+
         .box {
             margin: 20px 0;
         }
@@ -34,30 +35,37 @@
 </head>
 <body>
 <div id="app">
+    <g-row :gutter="20">
+        <g-col :span="6">1</g-col>
+        <g-col>2</g-col>
+        <g-col>3</g-col>
+        <g-col>4</g-col>
+    </g-row>
+    <hr>
     <div class="box">
-    <g-input v-model="message" @change= 'emitChange'></g-input>
+        <g-input v-model="message" @change='emitChange'></g-input>
         <p>{{message}}</p>
-    <g-input value="李四" disabled></g-input>
-    <g-input value="王五" readonly></g-input>
+        <g-input value="李四" disabled></g-input>
+        <g-input value="王五" readonly></g-input>
     </div>
     <div class="box">
-    <g-input value="王五" error="姓名不能少于两个字"></g-input>
+        <g-input value="王五" error="姓名不能少于两个字"></g-input>
     </div>
     <div style="margin: 20px">
-    <nt-button icon-name="settings" :loading="loading1" @click="emitEvent">
-        按钮js11
-    </nt-button>
-    <nt-button icon-name="settings" :loading="false" icon-position="left">
-        按钮js
-    </nt-button>
-    <nt-button icon-name="loading" :loading="true" icon-position="right">
-        按钮js
-    </nt-button>
-    <g-button-group>
-        <nt-button icon-name="left">上一页</nt-button>
-        <nt-button>更多</nt-button>
-        <nt-button icon-name="right" icon-position="right">下一页</nt-button>
-    </g-button-group>
+        <nt-button icon-name="settings" :loading="loading1" @click="emitEvent">
+            按钮js11
+        </nt-button>
+        <nt-button icon-name="settings" :loading="false" icon-position="left">
+            按钮js
+        </nt-button>
+        <nt-button icon-name="loading" :loading="true" icon-position="right">
+            按钮js
+        </nt-button>
+        <g-button-group>
+            <nt-button icon-name="left">上一页</nt-button>
+            <nt-button>更多</nt-button>
+            <nt-button icon-name="right" icon-position="right">下一页</nt-button>
+        </g-button-group>
     </div>
 </div>
 <div id="test">

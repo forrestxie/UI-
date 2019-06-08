@@ -39,11 +39,6 @@ export default {
             this.$emit('change', e.target.value)
         }
     },
-    mounted() {
-        if(this.error) {
-           console.log(this)
-        }
-    }
 }
 </script>
 <style lang="scss" scoped>
