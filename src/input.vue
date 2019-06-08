@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper" :class="{ 'error': error }">
+    <div class="wrapper" :class="{ error }">
         <!--如果存在error，则class等于error类，如果不存在，则class不存在-->
         <input type="text" :value="value" @change="changeValue" @input="$emit('input',$event.target.value)"
                @focus="$emit('focus',$event.target.value)"
@@ -37,6 +37,11 @@ export default {
     methods: {
         changeValue(e) {
             this.$emit('change', e.target.value)
+        }
+    },
+    mounted() {
+        if(this.error) {
+           console.log(this)
         }
     }
 }
