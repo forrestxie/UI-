@@ -27,5 +27,6 @@
 <style lang="scss">
     .row {
         display: flex;
+        flex-wrap: wrap;
     }
 </style>
