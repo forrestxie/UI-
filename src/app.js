@@ -10,6 +10,8 @@ import Content from './content'
 import Footer from './footer'
 import Header from './header'
 import Sider from './sider'
+import Toast from './toast'
+import plugin from './plugin'
 
 Vue.component('nt-button', Button)
 Vue.component('g-icon', Icon)
@@ -22,11 +24,16 @@ Vue.component('g-footer', Footer)
 Vue.component('g-header', Header)
 Vue.component('g-content', Content)
 Vue.component('g-sider', Sider)
+Vue.component('g-toast', Toast)
+Vue.use(plugin)
 new Vue({
     el: '#app',
     data: {
         loading1: true,
         message: 'hi'
+    },
+    created(){
+       this.$toast('生成toast')
     },
     methods: {
         emitEvent() {
@@ -34,6 +41,9 @@ new Vue({
         },
         emitChange(val) {
             console.log(val)
+        },
+        showToast() {
+            this.$toast('当前功能不稳定，情关闭')
         }
     }
 })

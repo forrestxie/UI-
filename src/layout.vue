@@ -15,7 +15,6 @@ export default {
     },
     mounted() {
         this.$children.forEach((vm)=>{
-            console.log(vm.$options.name, this.layoutClass)
             if(vm.$options.name === 'Gulu-sider') {
                 this.layoutClass.hasSider = true
             }
@@ -30,7 +29,6 @@ export default {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
-        border: 1px solid red;
         &.hasSider{
             flex-direction: row;
         }
