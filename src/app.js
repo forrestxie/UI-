@@ -33,7 +33,14 @@ new Vue({
         message: 'hi'
     },
     created(){
-       this.$toast('生成toast')
+       this.$toast('生成toast', {
+           closeButton: {
+               text: '知道了',
+               callback() {
+                   console.log('他说知道了')
+               }
+           }
+       })
     },
     methods: {
         emitEvent() {
@@ -43,7 +50,14 @@ new Vue({
             console.log(val)
         },
         showToast() {
-            this.$toast('当前功能不稳定，情关闭')
+            this.$toast('当前功能不稳定，当前功能不稳定当前功能不稳定当前功能不稳定当前功能不稳定当前功能不稳定当前功能不稳定当前功能不稳定当前功能不稳定当前功能不稳定当前功能不稳定，情关闭', {
+                closeButton: {
+                    text: '知道了',
+                    callback() {
+                        console.log('他说知道了')
+                    }
+                }
+            })
         }
     }
 })
