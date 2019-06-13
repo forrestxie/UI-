@@ -1,8 +1,8 @@
 <template>
-    <div class="toast" ref="wrapper">
+    <div class="toast" ref="wrapper" :class=`position-${position}`>
         <slot></slot>
         <div class="line" ref="line"></div>
-        <span v-if="closeButton" @click="clickClose" class="close">{{closeButton.text}}</span>
+        <span v-if="closeButton"  @click="clickClose" class="close">{{closeButton.text}}</span>
     </div>
 </template>
 <script>
@@ -27,6 +27,13 @@ import Vue from 'vue'
                            toast.close()
                        }
                    }
+               }
+           },
+           position: {
+               type: String,
+               default: 'left',
+               validate(val) {
+                   return ['top','left','center'].indexOf(val) > 0
                }
            }
        },
@@ -69,7 +76,7 @@ import Vue from 'vue'
         left: 50%; /*仅仅左边线50%*/
         transform: translateX(-50%); /*translate以自身宽高作对比*/
         font-size: 14px;
-         display: flex;
+        display: flex;
         align-items: center;
         background:#333;
         color: #fff;
@@ -79,6 +86,16 @@ import Vue from 'vue'
     .close {
         padding-left:16px;
         flex-shrink: 0;
+    }
+    .position-top {
+        top: 0;
+    }
+    .position-bottom{
+        bottom: 0;
+    }
+    .position-center{
+        top: 50%;
+        transform: translate(-50%,-50%);
     }
     .line {
         height: 100%;

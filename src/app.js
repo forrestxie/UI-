@@ -50,13 +50,17 @@ new Vue({
             console.log(val)
         },
         showToast() {
-            this.$toast('当前功能不稳定，当前功能不稳定当前功能不稳定当前功能不稳定当前功能不稳定当前功能不稳定当前功能不稳定当前功能不稳定当前功能不稳定当前功能不稳定当前功能不稳定，情关闭', {
+            this.$toast('当前功能不稳定，当前功能不稳定当前功能不稳定当前功能不稳定当前功能不稳定当前功能不稳定' +
+                '当前功能不稳定当前功能不稳定当前功能不稳定当前功能不稳定当前功能不稳定，情关闭', {
                 closeButton: {
                     text: '知道了',
                     callback() {
                         console.log('他说知道了')
                     }
-                }
+                },
+                autoCloseDelay: 5,
+                autoClose: false,
+                position: ''
             })
         }
     }
