@@ -1,8 +1,10 @@
 <template>
-    <div class="toast" ref="wrapper" :class=`position-${position}`>
-        <slot></slot>
-        <div class="line" ref="line"></div>
-        <span v-if="closeButton"  @click="clickClose" class="close">{{closeButton.text}}</span>
+    <div class="inner" :class=`position-${position}`>
+        <div class="toast" ref="wrapper">
+            <slot></slot>
+            <div class="line" ref="line"></div>
+            <span v-if="closeButton"  @click="clickClose" class="close">{{closeButton.text}}</span>
+        </div>
     </div>
 </template>
 <script>
@@ -67,14 +69,20 @@ import Vue from 'vue'
     }
 </script>
 <style lang="scss" scoped>
+    @keyframes fade-in {
+        0% {opacity: 0; transform: translateY(100%);}
+        100% {opacity: 1; transform: translateY(0%);}
+    }
+    .inner {
+        position: fixed;
+        left: 50%; /*仅仅左边线50%*/
+        transform: translateX(-50%); /*translate以自身宽高作对比*/
+    }
     .toast {
         border: 1px solid red;
-        position: fixed;
         min-height: 40px;
         line-height: 1.8;
         top: 0;
-        left: 50%; /*仅仅左边线50%*/
-        transform: translateX(-50%); /*translate以自身宽高作对比*/
         font-size: 14px;
         display: flex;
         align-items: center;
@@ -82,6 +90,7 @@ import Vue from 'vue'
         color: #fff;
         box-shadow: 0px 0px 3px 0px rgba(0,0,0,.5);
         padding: 0 16px;
+        animation: fade-in 1s;
     }
     .close {
         padding-left:16px;

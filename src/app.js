@@ -60,7 +60,7 @@ new Vue({
                 },
                 autoCloseDelay: 5,
                 autoClose: false,
-                position: ''
+                position: 'center'
             })
         }
     }
