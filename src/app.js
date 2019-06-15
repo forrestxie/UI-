@@ -42,7 +42,7 @@ new Vue({
     data: {
         loading1: true,
         message: 'hi',
-        selectedTab: 'sport'
+        selectedTab: 'sports'
     },
     methods: {
         emitEvent() {

@@ -30,9 +30,9 @@
                 eventBus: this.eventBus
             }
         },
-        created() {
-            console.log(this.eventBus)
-            console.log(this)
+        mounted() {
+            console.log(this.selected)
+            this.eventBus.$emit('update:selected',this.selected)
         }
     }
 </script>
