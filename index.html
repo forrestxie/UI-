@@ -43,7 +43,7 @@
 </head>
 <body>
 <div id="app">
-    <g-tab :selected="selectedTab"  @xxx="selectedTab=$events">
+    <g-tab :selected="selectedTab"  @emit-change-selected="changeSelected">
         <g-tabs-head>
             <div slot="actions">设置</div>
             <g-tabs-item name="women">

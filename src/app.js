@@ -51,6 +51,10 @@ new Vue({
         emitChange(val) {
             console.log(val)
         },
+        changeSelected(val) {
+          this.selectedTab = val
+            console.log(this.selectedTab)
+        },
         showToast() {
             this.$toast('当前功能不稳定，当前功能不稳定当前功能不稳定当前功能不稳定当前功能不稳定当前功能不稳定' +
                 '当前功能不稳定当前功能不稳定当前功能不稳定当前功能不稳定当前功能不稳定，情关闭', {

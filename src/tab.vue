@@ -33,6 +33,10 @@
         mounted() {
             console.log(this.selected)
             this.eventBus.$emit('update:selected',this.selected)
+            this.eventBus.$on('update:selected',(name)=> {
+                this.$emit('emit-change-selected', name)
+            })
+
         }
     }
 </script>
