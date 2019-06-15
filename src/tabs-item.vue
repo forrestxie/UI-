@@ -34,7 +34,7 @@ export default {
     },
     methods: {
         xxx() {
-            this.eventBus.$emit('update:selected', this.name)
+            this.eventBus.$emit('update:selected', this.name, this)
         }
     }
 }
@@ -43,8 +43,10 @@ export default {
     .tabs-item{
         flex-shrink: 0;
         padding: 0 1em;
-        &.active {
-            background: red;
-        }
+        height:100%;
+        display:flex;
+        cursor: pointer;
+        align-items:center;
+        color:#333333;
     }
 </style>

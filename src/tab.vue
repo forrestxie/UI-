@@ -31,12 +31,18 @@
             }
         },
         mounted() {
-            console.log(this.selected)
-            this.eventBus.$emit('update:selected',this.selected)
             this.eventBus.$on('update:selected',(name)=> {
                 this.$emit('emit-change-selected', name)
             })
-
+            this.$children.forEach((vm)=> {
+                if(vm.$options.name === 'Gulu-tabsHeader'){
+                    vm.$children.forEach((item)=>{
+                        if(item.$options.name === 'Gulu-tabsItem' && item.name === this.selected){
+                            this.eventBus.$emit('update:selected', this.selected, item)
+                        }
+                    })
+                }
+            })
         }
     }
 </script>
