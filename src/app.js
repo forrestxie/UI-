@@ -11,7 +11,13 @@ import Footer from './footer'
 import Header from './header'
 import Sider from './sider'
 import Toast from './toast'
-import plugin from './plugin'
+import Plugin from './plugin'
+import Tab from './tab'
+import TabsBody from './tabs-body'
+import TabsHead from './tabs-header'
+import TabsItem from './tabs-item'
+import TabPanel from './tabs-panel'
+
 
 Vue.component('nt-button', Button)
 Vue.component('g-icon', Icon)
@@ -25,22 +31,18 @@ Vue.component('g-header', Header)
 Vue.component('g-content', Content)
 Vue.component('g-sider', Sider)
 Vue.component('g-toast', Toast)
-Vue.use(plugin)
+Vue.component('g-tab', Tab)
+Vue.component('g-tabs-body', TabsBody)
+Vue.component('g-tabs-head', TabsHead)
+Vue.component('g-tabs-item', TabsItem)
+Vue.component('g-tabs-panel', TabPanel)
+Vue.use(Plugin)
 new Vue({
     el: '#app',
     data: {
         loading1: true,
-        message: 'hi'
-    },
-    created(){
-       this.$toast('生成toast', {
-           closeButton: {
-               text: '知道了',
-               callback() {
-                   console.log('他说知道了')
-               }
-           }
-       })
+        message: 'hi',
+        selectedTab: 'sport'
     },
     methods: {
         emitEvent() {

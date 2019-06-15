@@ -43,7 +43,27 @@
 </head>
 <body>
 <div id="app">
-    <nt-button @click="showToast">toast</nt-button>
+    <g-tab :selected="selectedTab"  @xxx="selectedTab=$events">
+        <g-tabs-head>
+            <g-tabs-item name="women">
+                <g-icon name="settings"></g-icon>美女
+            </g-tabs-item>
+            <g-tabs-item name="car">
+                <div slot="actions">
+                    设置
+                </div>
+                汽车</g-tabs-item>
+            <g-tabs-item name="finance">财经</g-tabs-item>
+            <g-tabs-item name="sports">体育</g-tabs-item>
+        </g-tabs-head>
+        <g-tabs-body>
+            <g-tabs-panel name="women">美女相关内容</g-tabs-panel>
+            <g-tabs-panel name="finance">财经相关内容</g-tabs-panel>
+            <g-tabs-panel name="sports">体育相关内容</g-tabs-panel>
+            <g-tabs-panel name="car">汽车相关内容</g-tabs-panel>
+        </g-tabs-body>
+    </g-tab>
+    <!--<nt-button @click="showToast">toast</nt-button>-->
     <!--<g-layout class="layout" style="height: 100vh">-->
         <!--<g-sider class="sider">sider</g-sider>-->
         <!--<g-layout>-->
