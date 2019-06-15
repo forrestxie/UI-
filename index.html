@@ -45,13 +45,12 @@
 <div id="app">
     <g-tab :selected="selectedTab"  @xxx="selectedTab=$events">
         <g-tabs-head>
+            <div slot="actions">设置</div>
             <g-tabs-item name="women">
-                <g-icon name="settings"></g-icon>美女
+                <g-icon name="settings"></g-icon>
+                美女
             </g-tabs-item>
             <g-tabs-item name="car">
-                <div slot="actions">
-                    设置
-                </div>
                 汽车</g-tabs-item>
             <g-tabs-item name="finance">财经</g-tabs-item>
             <g-tabs-item name="sports">体育</g-tabs-item>
