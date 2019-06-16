@@ -1,5 +1,5 @@
 <template>
-    <div class="tabs-item" @click="xxx" :class="classes">
+    <div class="tabs-item" @click="onClick" :class="classes">
         <slot></slot>
     </div>
 </template>
@@ -33,7 +33,7 @@ export default {
         })
     },
     methods: {
-        xxx() {
+        onClick() {
             this.eventBus.$emit('update:selected', this.name, this)
         }
     }

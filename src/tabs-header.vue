@@ -28,8 +28,10 @@ export default {
     height: $tab-height;
     justify-content: flex-start;
     align-items: center;
-    border: 1px solid red;
+    border-bottom: 1px solid #eee;
     position: relative;
+    padding-right: 20px;
+    padding-right: 20px;
     >.underLine{
         position:absolute;
         bottom: 0;
@@ -39,7 +41,8 @@ export default {
     }
     > .actions-wrapper {
         margin-left: auto;
-        border: 1px solid red;
+        display: flex;
+        align-items: center;
     }
 }
 </style>
